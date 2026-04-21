@@ -1,66 +1,40 @@
+
+---
+
+## 💻 Tech Stack
+
 <div align="center">
 
-<h1>✨ AstraHub ✨</h1>
-<h3>Modern • Clean • Powerful • Wind UI Modified</h3>
+### **Languages**
 
-<img src="https://img.shields.io/badge/Status-Active-brightgreen?style=for-the-badge">
-<img src="https://img.shields.io/badge/Version-1.0-blue?style=for-the-badge">
-<img src="https://img.shields.io/badge/Powered%20By-WindUI-purple?style=for-the-badge">
+<img src="https://img.shields.io/badge/Lua-2C2D72?style=for-the-badge&logo=lua&logoColor=white">
+<img src="https://img.shields.io/badge/C++-00599C?style=for-the-badge&logo=cplusplus&logoColor=white">
+<img src="https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white">
+<img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white">
+<img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white">
 
-<br><br>
+### **Tools & Platforms**
 
-A modern and powerful hub built with a modified Wind UI  
-designed for performance, customization and clean visuals.
+<img src="https://img.shields.io/badge/Visual%20Studio-5C2D91?style=for-the-badge&logo=visualstudio&logoColor=white">
+<img src="https://img.shields.io/badge/Roblox%20Studio-00A2FF?style=for-the-badge&logo=robloxstudio&logoColor=white">
+<img src="https://img.shields.io/badge/Web%20Developer-FF6B6B?style=for-the-badge&logo=web&logoColor=white">
 
 </div>
 
 ---
 
-## 🌌 About AstraHub
+## 📫 Connect
 
-AstraHub is a clean and modern hub built using a **modified Wind UI**.  
-It focuses on performance, customization, and clean architecture.
+<div align="center">
+  
+[![GitHub](https://img.shields.io/badge/GitHub-TzHzk-181717?style=for-the-badge&logo=github)](https://github.com/TzHzk)
 
-Designed for developers who want:
-
-- Clean UI  
-- Smooth performance  
-- Easy customization  
-- Modular structure  
+</div>
 
 ---
 
-## ⚡ Features
+<div align="center">
 
-✨ Modified Wind UI  
-🚀 Fast & Lightweight  
-🧠 Clean Structure  
-🎨 Modern UI Design  
-🔧 Easy Customization  
-📦 Modular System  
-🌙 Smooth Animations  
+**Made with 💜 by TzHzk**
 
----
-
-## 🎨 Wind UI Modifications
-
-AstraHub includes a customized version of Wind UI with:
-
-- Custom theme  
-- Improved animations  
-- Clean UI redesign  
-- Better performance  
-- New components  
-- Optimized structure  
-
----
-
-## 🚀 AstraHub Philosophy
-
-> Clean UI  
-> Smooth Experience  
-> Powerful Systems  
-
----
-
-## 📦 Structure
+</div>
