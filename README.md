@@ -35,6 +35,8 @@
 
 <div align="center">
 
-**Made with 💜 by TzHzk**
+**Made with 💜 by Ta Hub Zzz | 7xp**
+
+**Serve Discord: https://discord.gg/drR7ZVKPXe**
 
 </div>
