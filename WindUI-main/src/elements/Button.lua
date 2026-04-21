@@ -56,7 +56,7 @@ function Button.New(Title, Icon, Callback, Variant, Parent, Dialog, FullRounded,
 			Visible = not FullRounded,
 		}),
 
-		-- AQUÍ ESTÁ EL UIStroke IGUAL AL DE SECTION
+		-- AQUÍ ESTÁ EL UIStroke AGREGADO
 		Creator.NewRoundFrame(Radius, not FullRounded and "Glass-1" or "Glass-0.7", {
 			ThemeTag = {
 				ImageColor3 = "White",
