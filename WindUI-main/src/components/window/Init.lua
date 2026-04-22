@@ -1864,7 +1864,6 @@ return function(Config)
 				ClickedClose = true
 				--Window:SetToTheCenter()
 Window:Dialog({
-    --Icon = "trash-2", -- Opcional: puedes poner un icono de alerta si quieres
     Title = "Close | AstrasHub", -- Título personalizado
     Content = "Are you sure you want to close the AstrasHub interface?", -- Descripción personalizada
     Buttons = {
@@ -1873,7 +1872,7 @@ Window:Dialog({
             Callback = function()
                 ClickedClose = false
             end,
-            Variant = "Secondary", -- Botón gris/oscuro normal
+            Variant = "Secondary", -- Botón Cancelar normal
         },
         {
             Title = "Confirm", -- Texto del botón cambiado
@@ -1881,7 +1880,7 @@ Window:Dialog({
                 ClickedClose = false
                 Window:Destroy()
             end,
-            -- Usamos "Primary" pero forzamos el color ROJO manualmente para asegurar
+            -- Para hacer el botón ROJO, usamos Variant "Danger" si existe, o forzamos color
             Variant = "Primary", 
             Color = Color3.fromRGB(255, 60, 60), -- Rojo brillante personalizado
         },
