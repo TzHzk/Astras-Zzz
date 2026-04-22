@@ -2,30 +2,23 @@ local Creator = require("../../modules/Creator")
 local New = Creator.New
 local Tween = Creator.Tween
 
--- local Window
--- local WindUI
-
 local DialogModule = {
 	Holder = nil,
-	--Window = nil,
 	Parent = nil,
 }
-
 
 function DialogModule.Create(Key, Type, Window, WindUI, Parent)
 	local Dialog = {
 		UICorner = 28,
 		UIPadding = 12,
-
 		Window = Window,
 		WindUI = WindUI,
-
 		UIElements = {},
 	}
 
 	if Key then
 		Dialog.UIPadding = 0
-	end -- 16
+	end
 	if Key then
 		Dialog.UICorner = 26
 	end
@@ -35,11 +28,11 @@ function DialogModule.Create(Key, Type, Window, WindUI, Parent)
 	if not Key then
 		Dialog.UIElements.FullScreen = New("Frame", {
 			ZIndex = 999,
-			BackgroundTransparency = 1, -- 0.3
+			BackgroundTransparency = 1,
 			BackgroundColor3 = Color3.fromHex("#000000"),
 			Size = UDim2.new(1, 0, 1, 0),
-			Active = false, -- true
-			Visible = false, -- true
+			Active = false,
+			Visible = false,
 			Parent = DialogModule.Parent
 				or (Window and Window.UIElements and Window.UIElements.Main and Window.UIElements.Main.Main),
 		}, {
@@ -49,15 +42,14 @@ function DialogModule.Create(Key, Type, Window, WindUI, Parent)
 		})
 	end
 
-	local Blur = New("ImageLabel", { -- Shadow
+	local Blur = New("ImageLabel", {
 		Image = "rbxassetid://8992230677",
 		ThemeTag = {
 			ImageColor3 = "WindowShadow",
-			--ImageTransparency = "WindowShadowTransparency",
 		},
-		ImageTransparency = 1, -- .7
+		ImageTransparency = 1,
 		Size = UDim2.new(1, 100, 1, 100),
-		Position = UDim2.new(0, -100 / 2, 0, -100 / 2),
+		Position = UDim2.new(0, -50, 0, -50),
 		ScaleType = "Slice",
 		SliceCenter = Rect.new(99, 99, 99, 99),
 		BackgroundTransparency = 1,
@@ -71,7 +63,7 @@ function DialogModule.Create(Key, Type, Window, WindUI, Parent)
 			BackgroundColor3 = Type .. "Background",
 		},
 		AutomaticSize = "Y",
-		BackgroundTransparency = 1, -- .7
+		BackgroundTransparency = 1,
 		Visible = false,
 		ZIndex = 99999,
 	}, {
@@ -83,45 +75,32 @@ function DialogModule.Create(Key, Type, Window, WindUI, Parent)
 		}),
 	})
 
+	-- FONDO DEL DIALOG MODIFICADO (Oscuro con borde verde sutil)
 	Dialog.UIElements.MainContainer = Creator.NewRoundFrame(Dialog.UICorner, "Squircle", {
-		Visible = false, -- true
-		--GroupTransparency = 1, -- 0
+		Visible = false,
 		ImageTransparency = Key and 0.15 or 0,
 		Parent = Parent or Dialog.UIElements.FullScreen,
 		Position = UDim2.new(0.5, 0, 0.5, 0),
 		AnchorPoint = Vector2.new(0.5, 0.5),
 		AutomaticSize = "XY",
-		ThemeTag = {
-			ImageColor3 = Type .. "Background",
-			ImageTransparency = Type .. "BackgroundTransparency",
-		},
+		ImageColor3 = Color3.fromRGB(15, 15, 20), -- Fondo casi negro
 		ZIndex = 9999,
 	}, {
 		Creator.NewRoundFrame(Dialog.UICorner, "Glass-1", {
 		    ImageTransparency = 0.89,
-		    Size = UDim2.new(1,0,1,0)
+		    Size = UDim2.new(1,0,1,0),
+		    ImageColor3 = Color3.fromRGB(48, 255, 106), -- Tinte verde muy sutil
 		}),
-		Dialog.UIElements.Main,
+		
+		-- Borde Verde Sutil
+		Creator.NewRoundFrame(Dialog.UICorner, "SquircleOutline", {
+			Size = UDim2.new(1,0,1,0),
+			ImageColor3 = Color3.fromRGB(48, 255, 106),
+			ImageTransparency = 0.8,
+			ZIndex = 10000,
+		}),
 
-		-- New("UIScale", {
-		--     Scale = .9
-		-- }),
-		-- Creator.NewRoundFrame(Dialog.UICorner, "SquircleOutline2", {
-		--     Size = UDim2.new(1,0,1,0),
-		--     ImageTransparency = 1,
-		--     ThemeTag = {
-		--         ImageColor3 = "Outline",
-		--     },
-		-- }, {
-		--     New("UIGradient", {
-		--         Rotation = 45,
-		--         Transparency = NumberSequence.new({
-		--             NumberSequenceKeypoint.new(0, 0.55),
-		--             NumberSequenceKeypoint.new(0.5, 0.8),
-		--             NumberSequenceKeypoint.new(1, 0.6)
-		--         })
-		--     })
-		-- })
+		Dialog.UIElements.Main,
 	})
 
 	function Dialog:Open()
@@ -137,14 +116,14 @@ function DialogModule.Create(Key, Type, Window, WindUI, Parent)
 				Tween(Dialog.UIElements.FullScreen, 0.1, { BackgroundTransparency = 0.3 }):Play()
 			end
 			Tween(Dialog.UIElements.MainContainer, 0.1, { ImageTransparency = 0 }):Play()
-			--Tween(Dialog.UIElements.MainContainer.UIScale, 0.1, {Scale = 1}):Play()
-			--Tween(Dialog.UIElements.MainContainer.UIStroke, 0.1, {Transparency = 1}):Play()
+			
 			task.spawn(function()
 				task.wait(0.05)
 				Dialog.UIElements.Main.Visible = true
 			end)
 		end)
 	end
+
 	function Dialog:Close()
 		if not Key then
 			Tween(Dialog.UIElements.FullScreen, 0.1, { BackgroundTransparency = 1 }):Play()
@@ -157,8 +136,6 @@ function DialogModule.Create(Key, Type, Window, WindUI, Parent)
 		Dialog.UIElements.Main.Visible = false
 
 		Tween(Dialog.UIElements.MainContainer, 0.1, { ImageTransparency = 1 }):Play()
-		--Tween(Dialog.UIElements.MainContainer.UIScale, 0.1, {Scale = .9}):Play()
-		--Tween(Dialog.UIElements.MainContainer.UIStroke, 0.1, {Transparency = 1}):Play()
 
 		task.spawn(function()
 			task.wait(0.1)
@@ -172,7 +149,6 @@ function DialogModule.Create(Key, Type, Window, WindUI, Parent)
 		return function() end
 	end
 
-	--Dialog:Open()
 	return Dialog
 end
 
