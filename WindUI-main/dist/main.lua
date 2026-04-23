@@ -13410,8 +13410,8 @@ F=true
 
 au:Dialog{
 
-Title="Close Window",
-Content="Do you want to close this window? You will not be able to open it again.",
+Title="Close | AstrasHub",
+Content="Are you sure you want to close the AstrasHub interface?",
 Buttons={
 {
 Title="Cancel",
@@ -13422,13 +13422,17 @@ end,
 Variant="Secondary",
 },
 {
-Title="Close Window",
+Title="Confirm",
 
 Callback=function()
 F=false
 au:Destroy()
 end,
-Variant="Primary",
+-- CAMBIO AQUÍ: Usamos "Danger" para que sea rojo, o forzamos el color
+Variant="Danger", 
+-- Si "Danger" no funciona en tu versión, usa estas dos líneas en su lugar:
+-- Variant="Primary",
+-- Color=Color3.fromRGB(255,60,60),
 },
 },
 }
