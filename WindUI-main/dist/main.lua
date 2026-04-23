@@ -13409,29 +13409,26 @@ if not au.IgnoreAlerts then
 F=true
 
 au:Dialog{
-
-Title="Close | AstrasHub",
-Content="Are you sure you want to close the AstrasHub interface?",
-Buttons={
-{
-Title="Cancel",
-
-Callback=function()
-F=false
-end,
-Variant="Secondary",
-},
-{
-{
-Title="Confirm",
-Callback=function()
-F=false
-au:Destroy()
-end,
-Variant="Primary",
-Color=Color3.fromRGB(255,60,60), -- Rojo Brillante
-},
-},
+    Title="Close | AstrasHub",
+    Content="Are you sure you want to close the AstrasHub interface?",
+    Buttons={
+        {
+            Title="Cancel",
+            Callback=function()
+                F=false
+            end,
+            Variant="Secondary",
+        },
+        {
+            Title="Confirm",
+            Callback=function()
+                F=false
+                au:Destroy()
+            end,
+            Variant="Primary",
+            Color=Color3.fromRGB(255,60,60), -- Rojo Brillante
+        },
+    },
 }
 else
 au:Destroy()
